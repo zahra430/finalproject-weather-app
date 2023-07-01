@@ -69,3 +69,15 @@ small {
 .weather-app .active:hover {
   text-decoration: none;
 }
+.weather-forecast {
+  margin-top: 30px;
+  text-align: center;
+  color: #000;
+}
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.7;
+}
+.weather-forecast-temperatures {
+  font-size: 12px;
+}
