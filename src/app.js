@@ -25,6 +25,42 @@ let dateElement = document.querySelector("#date");
 let currentTime = new Date();
 dateElement.innerHTML = formatDate(currentTime);
 
+function displayForecast() {
+  let forecastElements = document.querySelector("#forecast");
+  let days = ["Sat", "Sun", "mon", "Tue", "Wed", "Thu"];
+  let forecastHTML = `
+        <div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-2">
+                <ul>
+                  <li class="weather-forecast-date">${day}</li>
+                  <li>
+                    <img
+                      src="https://openweathermap.org/img/wn/03n@2x.png"
+                      alt=""
+                      width="42"
+                    />
+                  </li>
+                  <li class="weather-forecast-temperatures">
+                    <span class="weather-forecast-temperature-max">27°</span>
+                    <span class="weather-forecast-temperature-min">13°</span>
+                  </li>
+                </ul>
+              </div>
+    `;
+  });
+  forecastHTML =
+    forecastHTML +
+    ` </div> 
+  `;
+  forecastElements.innerHTML = forecastHTML;
+  console.log(forecastElements);
+}
+displayForecast();
+
 function displayTemperature(response) {
   console.log(response);
   celsiusTemperature = response.data.main.temp;
